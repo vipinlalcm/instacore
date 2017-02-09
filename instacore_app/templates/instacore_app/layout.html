@@ -16,6 +16,7 @@
 
     <!-- Custom CSS -->
     <link href="../static/css/sb-admin.css" rel="stylesheet">
+    <link href="../static/css/sidebar.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="../static/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -70,25 +71,26 @@
             <!-- /.navbar-collapse -->
         </nav>
 
-      {% block content %}
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+              <li class="sidebar-heading">Webserver</li>
+              <li class="sidebar-heading">PHP</li>
+              <li class="sidebar-heading">Database Server</li>
+              <li class="sidebar-heading">Others</li>
+           </ul>
+        </div>
 
-      {% endblock %}
+        <div id="page-wrapper">
+            {% block content %}
+            {% endblock %}
+        </div>
 
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
 
-          <!-- jQuery -->
-          <script src="../static/js/jquery.js"></script>
+    </div>
 
-          <!-- Bootstrap Core JavaScript -->
-          <script src="../static/js/bootstrap.min.js"></script>
-
-          <!-- Morris Charts JavaScript -->
-          <script src="../static/js/plugins/morris/raphael.min.js"></script>
-          <script src="../static/js/plugins/morris/morris.min.js"></script>
-          <script src="../static/js/plugins/morris/morris-data.js"></script>
-          </body>
-          </html>
+    <!-- jQuery -->
+    <script src="../static/js/jquery.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../static/js/bootstrap.min.js"></script>
+</body>
+</html>
