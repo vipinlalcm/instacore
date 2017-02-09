@@ -6,7 +6,8 @@ ftpserver_choices = [('pure-ftpd', 'pure-ftpd'), ('proftpd', 'proftpd'),
 
 
 class Webserverftp(forms.ModelForm):
-    ftppassword = forms.CharField(widget=forms.PasswordInput)
+    ftppassword = forms.CharField(widget=forms.PasswordInput, min_length=12,
+                                  max_length=60)
 
     class Meta:
         model = Webserver

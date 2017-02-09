@@ -1,20 +1,22 @@
-from django.http import Http404
-from django.shortcuts import render
+from django.views import generic
+from django.views.generic.edit import CreateView
 from .models import Webserver
 
 
-def home(request):
-    return render(request, 'instacore_app/layout.html')
+class HomeView(generic.ListView):
+        template_name = 'instacore_app/home.html'
+        context_object_name = 'all_details'
+
+        def get_queryset(self):
+            return Webserver.objects.all()
 
 
-def lamp(request):
-    try:
-        details = Webserver.objects.all()
-    except Webserver.DoesNotExist:
-        raise Http404("Webserver details does not exist")
-    return render(request, 'instacore_app/lamp.html',
-                  {'details': details})
+class DetailView(generic.DetailView):
+    model = Webserver
+    template_name = 'instacore_app/details.html'
 
 
-def upload(request):
-    return render(request, 'instacore_app/layout.html')
+class WebserverCreate(CreateView):
+    model = Webserver
+    fields = ['ip_address', 'webserver', 'documentroot', 'sitecount',
+              'sitename', 'ftpserver', 'ftpuser', 'ftppassword']
