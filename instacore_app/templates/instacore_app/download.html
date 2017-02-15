@@ -1,0 +1,11 @@
+{% extends "instacore_app/layout.html" %}
+{% block content %}
+{% if data %}
+  <h3> Download feature will be added later. Currnetly it just shows the details. </h3>
+  <ul>
+  <li><a href="{% url 'instacore_app:web_details' data.id %}"> {{ data.ip_address }} {{ data.sitename }}</li>
+{% else %}
+  <h3> You don't have any details </h3>
+{% endif %}
+
+{% endblock %}

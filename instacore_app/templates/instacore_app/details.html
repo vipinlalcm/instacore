@@ -1,4 +1,22 @@
 {% extends "instacore_app/layout.html" %}
 {% block content %}
-{{ web_details }}
+<h3>Details: </h3>
+<li>{{ webserver.ip_address }}</li><br>
+<li>{{ webserver.selectos }}</li><br>
+<li>{{ webserver.user }}</li><br>
+<li>{{ webserver.rootpassword }}</li><br>
+<li>{{ webserver.webserver }}</li><br>
+<li>{{ webserver.phpversion }}</li><br>
+<li>{{ webserver.phpmod }}</li><br>
+<li>{{ webserver.ftpserver }}</li><br>
+<li>{{ webserver.sqlserver }}</li><br>
+<li>{{ webserver.documentroot }}</li><br>
+<li>{{ webserver.sitecount }}</li><br>
+<li>{{ webserver.sitename }}</li><br>
+<li>{{ webserver.ftpuser }}</li><br>
+<li>{{ webserver.ftppassword }}</li><br>
+<li>{{ webserver.databasename }}</li><br>
+<li>{{ webserver.sqlusername }}</li><br>
+<li>{{ webserver.dbuserpassword }}</li><br>
+<li>{{ webserver.sqlrootpassword }}</li><br>
 {% endblock %}
