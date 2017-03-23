@@ -1,0 +1,2 @@
+[customer]
+213.180.88.254 keys=false ansible_ssh_port=22 ansible_become=true ansible_become_user=root ansible_become_method=sudo ansible_ssh_user=wqdwefwef ansible_ssh_pass=dfregdgdftgf

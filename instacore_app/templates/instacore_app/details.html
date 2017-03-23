@@ -5,6 +5,7 @@
 <li>{{ webserver.selectos }}</li><br>
 <li>{{ webserver.user }}</li><br>
 <li>{{ webserver.rootpassword }}</li><br>
+<li>{{ webserver.port }}</li><br>
 <li>{{ webserver.webserver }}</li><br>
 <li>{{ webserver.phpversion }}</li><br>
 <li>{{ webserver.phpmod }}</li><br>
@@ -19,4 +20,26 @@
 <li>{{ webserver.sqlusername }}</li><br>
 <li>{{ webserver.dbuserpassword }}</li><br>
 <li>{{ webserver.sqlrootpassword }}</li><br>
+
+<div class="row">
+    <div class="col-lg-8">
+      <form class="form-horizontal" action="{% url 'instacore_app:submit' webserver.pk %}" method="GET">
+        {% csrf_token %}
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" name="install" value="install" class="btn btn-success">Re-run</button>
+          </div>
+        </div>
+      </form>
+
+      <form class="form-horizontal" action="{% url 'instacore_app:download' webserver.pk %}" method="GET">
+        {% csrf_token %}
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" name="download" value="download" class="btn btn-primary">Generate and Download</button>
+          </div>
+        </div>
+      </form>
+    </div>
+</div>
 {% endblock %}

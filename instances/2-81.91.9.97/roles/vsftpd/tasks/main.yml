@@ -1,0 +1,4 @@
+---
+- name: Install vsftpd
+  apt: pkg=vsftpd update_cache=no state=latest
+  notify: restart vsftpd

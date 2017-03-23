@@ -1,0 +1,8 @@
+- hosts: all
+  roles:
+  - apache2
+  - vsftpd
+  - php7.0
+  - mysql-server-5.7
+  vars_files:
+  - vars/all.yml

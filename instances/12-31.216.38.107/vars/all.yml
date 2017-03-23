@@ -1,0 +1,16 @@
+apache2:
+  docroot: /var/www/
+sitename:
+- site: site.com
+- site: site1.com
+vsftpd:
+  password: $6$81Q6SpJDuani0J3m$HZseJurpn8VMBUG/q5lCQ77uMzeLl71Bq5bZZfWxmc/PSML4VMZdxgTxb9dOaCB4Zs47cg4Ut4pkJwxmUima/1
+  user: siteuser
+php:
+- php7.0-cli
+- php7.0-common
+mysql:
+  database: testdata
+  password: eFl8r2Ak0elU06JKCC6f
+  root_password: eFl8r2Ak0elU06JKCC6f
+  user: testuser

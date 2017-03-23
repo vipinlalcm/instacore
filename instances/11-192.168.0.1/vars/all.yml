@@ -1,0 +1,20 @@
+apache2:
+  docroot: adfasfascas
+sitename:
+- site: site1.com
+- site: site2.com
+vsftpd:
+  password: $6$HKQRXjcV8hyVStgr$4xL7PG65Ynr6N/qLhaeMsKTOOqcrp9s32sOVfeTKmCkDtPRvkvogAlRd/lSDLL6wYAeVTL9HwW8WAOXcuozIN0
+  user: adfasfascas
+php:
+- php7.0-cli
+- php7.0-common
+- php7.0-gmp
+- php7.0-json
+- php7.0-soap
+- php7.0-sybase
+mysql:
+  database: adfasfascas
+  password: adfasfascas
+  root_password: adfasfascas
+  user: adfasfascas

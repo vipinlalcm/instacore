@@ -1,0 +1,2 @@
+[customer]
+81.91.9.97 keys=false ansible_ssh_port=22 ansible_become=true ansible_become_user=root ansible_become_method=sudo ansible_ssh_user=liebliablia ansible_ssh_pass=liebliablia

@@ -1,0 +1,15 @@
+apache2:
+  docroot: liebliablia
+sitename:
+- site: site1.com
+- site: site2.com
+vsftpd:
+  password: $6$BgJZAOQf4ck273r3$7G.ilLYk2kKPiPzBRU.e24oJ/R1/9FluwVNpicqhP9juPQ7cevbiYFmY9Dc/gJXhENvUZV9SvhcPJPISjNJBY/
+  user: liebliablia
+php:
+- php7.0-fpm
+mysql:
+  database: liebliablia
+  password: liebliablia
+  root_password: liebliablia
+  user: liebliablia

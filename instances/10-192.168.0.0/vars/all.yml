@@ -1,0 +1,18 @@
+apache2:
+  docroot: adminkjbnkjd
+sitename:
+- site: site1.com
+- site: site2.com
+vsftpd:
+  password: $6$03T69XmjXp8vlB.f$eHSiYLiXvjVF6l/UHkzoT4.oT.PsO/WVzSUengHQbqNnG9zU07k102C8dfPdxZC5xJ7Wcq8Fuq2C3kQBUIh0J/
+  user: testuser
+php:
+- php7.0-cgi
+- php7.0-cli
+- php7.0-common
+- php7.0-fpm
+mysql:
+  database: adminkjbnkjd
+  password: adminkjbnkjd
+  root_password: adminkjbnkjd
+  user: adminkjbnkjd

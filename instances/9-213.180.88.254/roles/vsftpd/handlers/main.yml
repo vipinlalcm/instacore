@@ -1,0 +1,3 @@
+---
+- name: restart vsftpd
+  service: name=vsftpd enabled=yes state=restarted
