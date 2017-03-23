@@ -1,2 +1,0 @@
-[customer]
-31.216.38.107 keys=false ansible_ssh_port=22 ansible_become=true ansible_become_user=root ansible_become_method=sudo ansible_ssh_user=root ansible_ssh_pass=eFl8r2Ak0elU06JKCC6f

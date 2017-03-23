@@ -3,5 +3,6 @@ __pycache__
 migrations
 db.sqlite3
 download
+instances
 *.log
 *.pyc

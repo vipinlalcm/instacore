@@ -1,2 +1,0 @@
-[customer]
-192.168.0.1 keys=false ansible_ssh_port=22 ansible_become=true ansible_become_user=root ansible_become_method=sudo ansible_ssh_user=adfasfascas ansible_ssh_pass=adfasfascas
