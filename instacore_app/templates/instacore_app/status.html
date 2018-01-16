@@ -1,0 +1,21 @@
+{% extends "instacore_app/layout.html" %}
+{% block content %}
+<div class="row">
+    <div class="col-lg-8">
+      <form class="form-horizontal" action="" method="GET">
+        {% csrf_token %}
+        <ul>
+              {% for message in messages %}
+              <li class="{{ message.tags }}">
+                  {% if 'safe' in message.tags %}
+                      {{ message|safe }}
+                  {% else %}
+                      {{ message }}
+                  {% endif %}
+              </li>
+              {% endfor %}
+          </ul>
+        </form>
+    </div>
+  </div>
+{% endblock %}

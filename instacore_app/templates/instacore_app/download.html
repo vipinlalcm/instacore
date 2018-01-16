@@ -1,0 +1,23 @@
+{% extends "instacore_app/layout.html" %}
+{% block content %}
+{% if messages %}
+<ul>
+      {% for message in messages %}
+      <li class="{{ message.tags }}">
+          {% if 'safe' in message.tags %}
+              {{ message|safe }}
+          {% else %}
+              {{ message }}
+          {% endif %}
+      </li>
+      {% endfor %}
+  </ul>
+{% endif %}
+{% if data %}
+  <h3> Click on the below link to view the instance details. </h3>
+  <ul>
+  <li><a href="{% url 'instacore_app:web_details' data.id %}"> {{ data.ip_address }} {{ data.sitename }}</li>
+{% else %}
+  <h3> You don't have any details </h3>
+{% endif %}
+{% endblock %}

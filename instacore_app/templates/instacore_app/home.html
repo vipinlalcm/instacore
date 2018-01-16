@@ -1,0 +1,13 @@
+{% extends "instacore_app/layout.html" %}
+{% block content %}
+{% if all_details %}
+  <h3> Details </h3>
+  <ul>
+    {% for h in all_details %}
+      <li><a href="{% url 'instacore_app:web_details' h.id %}"> {{h.id}} {{ h.ip_address }} {{ h.sitename }}</li>
+    {% endfor %}
+{% else %}
+  <h3> You don't have any details </h3>
+{% endif %}
+
+{% endblock %}
