@@ -9,18 +9,18 @@ Packages required.
 1) python 3.5.2
 2) virtualenv
 3) pip
-``` sh
-#virtualenv --python=python3.5 venv
-#source venv/bin/activate
-#git clone git@git.cygate.io:vipicm/instacore.git
-#cd instacore
-#pip install -r requirements.txt
+```sh
+$ virtualenv --python=python3.5 venv
+$ source venv/bin/activate
+$ git clone git@git.cygate.io:vipicm/instacore.git
+$ cd instacore
+$ pip install -r requirements.txt
 ```
 How to run
 ============
-``` sh
-#source venv/bin/activate
-#cd instacore
-#celery -A instacore_app worker -l info &
-#python manager.py runserver
+```sh
+$ source venv/bin/activate
+$ cd instacore
+$ celery -A instacore_app worker -l info &
+$ python manager.py runserver
 ```
