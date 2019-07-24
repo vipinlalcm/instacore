@@ -1,4 +1,5 @@
 from django.db import models
+from multiselectfield import MultiSelectField
 # from django.core.urlresolvers import reverse
 webserver_choices = [('apache2', 'Apache2'),
                      ('nginx', 'Nginx')]
@@ -58,31 +59,68 @@ sqldatabase_choices = [('mysql-server-5.6', 'mysql-server-5.6'),
 
 
 class Webserver(models.Model):
+    php70mod_choices = [('php7.0-cgi', 'php7.0-cgi'),
+                        ('php7.0-cli', 'php7.0-cli'),
+                        ('php7.0-common', 'php7.0-common'),
+                        ('php7.0-fpm', 'php7.0-fpm'),
+                        ('php7.0-mcrypt', 'php7.0-mcrypt'),
+                        ('php7.0-curl', 'php7.0-curl'),
+                        ('php7.0-dev', 'php7.0-dev'),
+                        ('php7.0-gd', 'php7.0-gd'),
+                        ('php7.0-gmp', 'php7.0-gmp'),
+                        ('php7.0-json', 'php7.0-json'),
+                        ('php7.0-ldap', 'php7.0-ldap'),
+                        ('php7.0-mysql', 'php7.0-mysql'),
+                        ('php7.0-odbc', 'php7.0-odbc'),
+                        ('php7.0-opcache', 'php7.0-opcache'),
+                        ('php7.0-pgsql', 'php7.0-pgsql'),
+                        ('php7.0-pspell', 'php7.0-pspell'),
+                        ('php7.0-readline', 'php7.0-readline'),
+                        ('php7.0-recode', 'php7.0-recode'),
+                        ('php7.0-snmp', 'php7.0-snmp'),
+                        ('php7.0-sqlite3', 'php7.0-sqlite3'),
+                        ('php7.0-tidy', 'php7.0-tidy'),
+                        ('php7.0-xml', 'php7.0-xml'),
+                        ('php7.0-xmlrpc', 'php7.0-xmlrpc'),
+                        ('php7.0-bcmath', 'php7.0-bcmath'),
+                        ('php7.0-bz2', 'php7.0-bz2'),
+                        ('php7.0-enchant', 'php7.0-enchant'),
+                        ('php7.0-imap', 'php7.0-imap'),
+                        ('php7.0-interbase', 'php7.0-interbase'),
+                        ('php7.0-intl', 'php7.0-intl'),
+                        ('php7.0-mbstring', 'php7.0-mbstring'),
+                        ('php7.0-phpdbg', 'php7.0-phpdbg'),
+                        ('php7.0-soap', 'php7.0-soap'),
+                        ('php7.0-sybase', 'php7.0-sybase'),
+                        ('php7.0-xsl', 'php7.0-xsl'),
+                        ('php7.0-zip', 'php7.0-zip'),
+                        ('php7.0-dba', 'php7.0-dba')]
     ip_address = models.GenericIPAddressField(max_length=20)
     selectos = models.CharField(max_length=20,
                                 choices=os_choices, default='U16')
-    user = models.CharField(max_length=20)
-    rootpassword = models.CharField(max_length=40)
+    user = models.CharField(max_length=20, default='root')
+    rootpassword = models.CharField(max_length=40,default='')
     port = models.CharField(max_length=6, default=22)
     webserver = models.CharField(max_length=20, choices=webserver_choices,
                                  default='apache2')
-    documentroot = models.CharField(max_length=100)
+    documentroot = models.CharField(max_length=100,default='')
     sitecount = models.IntegerField()
-    sitename = models.CharField(max_length=100)
+    sitename = models.CharField(max_length=100,default='')
     ftpserver = models.CharField(max_length=20, choices=ftpserver_choices,
                                  default='vsftpd')
-    ftpuser = models.CharField(max_length=20)
-    ftppassword = models.CharField(max_length=40)
+    ftpuser = models.CharField(max_length=20,default='')
+    ftppassword = models.CharField(max_length=40,default='')
     phpversion = models.CharField(max_length=20, choices=php_ver_choices,
                                   default='php7.0')
-    phpmod = models.CharField(max_length=255)
+    phpmod = MultiSelectField(max_length=255, choices=php70mod_choices,
+                              default='')
     sqlserver = models.CharField(max_length=20,
                                  choices=sqldatabase_choices,
                                  default='mysql-server-5.7')
-    databasename = models.CharField(max_length=20)
-    sqlusername = models.CharField(max_length=20)
-    dbuserpassword = models.CharField(max_length=40)
-    sqlrootpassword = models.CharField(max_length=40)
+    databasename = models.CharField(max_length=20,default='' )
+    sqlusername = models.CharField(max_length=20,default='')
+    dbuserpassword = models.CharField(max_length=40,default='')
+    sqlrootpassword = models.CharField(max_length=40,default='')
 
     # def get_absolute_url(self):
     #     return reverse('instacore_app:web_details', kwargs={'pk': self.pk})

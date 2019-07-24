@@ -48,8 +48,7 @@ class Webserverftp(forms.ModelForm):
                                      max_length=60)
     sqlrootpassword = forms.CharField(widget=forms.PasswordInput,
                                       min_length=8, max_length=60)
-    phpmod = forms.MultipleChoiceField(widget=forms.SelectMultiple,
-                                       choices=php70mod_choices)
+    phpmod = forms.MultipleChoiceField(choices=php70mod_choices)
 
     class Meta:
         model = Webserver
