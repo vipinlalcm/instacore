@@ -9,7 +9,7 @@ Packages required.
 1) python 3.5.2
 2) virtualenv
 3) pip
-4) python3-dev
+4) apt-get install python3-dev redis-server
 
 ```sh
 $ virtualenv --python=python3.5 venv
