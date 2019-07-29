@@ -26,3 +26,6 @@ $ cd instacore
 $ celery -A instacore_app worker -l info &
 $ python manager.py runserver
 ```
+#skdldfklsk
+#kjnvlkdn
+#lnlfknl
