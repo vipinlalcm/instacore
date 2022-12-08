@@ -14,7 +14,7 @@ Packages required.
 ```sh
 $ virtualenv --python=python3.5 venv
 $ source venv/bin/activate
-$ git clone git@git.cygate.io:vipicm/instacore.git
+$ git clone git@github.com:vipinlalcm/instacore.git
 $ cd instacore
 $ pip install -r requirements.txt
 ```
